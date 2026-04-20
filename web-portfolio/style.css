@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&family=Courier+Prime:wght@400;700&display=swap');
+
+/* Общие настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #2b2b2b;
+    background-image: 
+        linear-gradient(rgba(80, 70, 40, 0.2) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(80, 70, 40, 0.2) 1px, transparent 1px);
+    background-size: 40px 40px;
+    font-family: 'Courier Prime', 'Courier New', monospace;
+    color: #d4cbad;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Эффект старой бумаги + зернистость */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/old-paper.png');
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Главный контейнер — как старая открытка */
+.container {
+    max-width: 800px;
+    background: #1e1b1a;
+    border: 8px double #c9a87b;
+    padding: 40px;
+    box-shadow: 15px 15px 0 rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+/* Заголовки как на пишущей машинке */
+h1 {
+    font-family: 'VT323', monospace;
+    font-size: 48px;
+    color: #e8d4a5;
+    border-left: 4px solid #c9a87b;
+    padding-left: 20px;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-family: 'VT323', monospace;
+    font-size: 32px;
+    color: #ddcfa0;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #c9a87b;
+    display: inline-block;
+}
+
+/* Обычный текст */
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Стиль для фото/аватара */
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #c9a87b;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 30px;
+    filter: grayscale(30%) sepia(20%);
+}
+
+/* Кнопки в ретро-стиле */
+.button {
+    display: inline-block;
+    background: #2a2623;
+    color: #e8d4a5;
+    font-family: 'Courier Prime', monospace;
+    font-size: 16px;
+    padding: 12px 24px;
+    margin-top: 20px;
+    margin-right: 10px;
+    text-decoration: none;
+    border: 2px solid #c9a87b;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 3px 3px 0 #c9a87b;
+}
+
+.button:hover {
+    background: #c9a87b;
+    color: #1e1b1a;
+    box-shadow: 0px 0px 0 #c9a87b;
+    transform: translate(3px, 3px);
+}
+
+/* Список навыков — как чек-лист из 90-х */
+.skills {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.skills li {
+    padding: 8px 0;
+    padding-left: 28px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23c9a87b" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>') left center no-repeat;
+    background-size: 18px;
+}
+
+/* Ссылки на соцсети */
+.social-links {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #c9a87b;
+}
+
+.social-links a {
+    color: #e8d4a5;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 16px;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+    color: #c9a87b;
+}
+
+/* Эффект пишущей машинки для заголовка (по желанию) */
+.typewriter {
+    overflow: hidden;
+    border-right: 2px solid #c9a87b;
+    white-space: nowrap;
+    animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #c9a87b; }
+}
